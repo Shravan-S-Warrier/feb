@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will You Be My Valentine?</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #b30059;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      position: relative;
+      height: 150px;
+      width: 300px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      position: absolute;
+    }
+
+    #yes {
+      left: 40px;
+      background-color: #ff3366;
+      color: white;
+    }
+
+    #no {
+      right: 40px;
+      background-color: #cccccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Will you be my Valentine? 💖</h1>
+
+  <div class="buttons">
+    <button id="yes" onclick="sayYes()">Yes 💕</button>
+    <button id="no" onmouseover="moveNo()">No 🙈</button>
+  </div>
+
+  <script>
+    function moveNo() {
+      const noBtn = document.getElementById("no");
+      const container = document.querySelector(".buttons");
+
+      const maxX = container.clientWidth - noBtn.clientWidth;
+      const maxY = container.clientHeight - noBtn.clientHeight;
+
+      const randomX = Math.random() * maxX;
+      const randomY = Math.random() * maxY;
+
+      noBtn.style.left = randomX + "px";
+      noBtn.style.top = randomY + "px";
+    }
+
+    function sayYes() {
+      document.body.innerHTML = `
+        <h1>Yayyy!!! 💖🥰</h1>
+        <p style="font-size:1.5rem;">Best decision ever 😘</p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
