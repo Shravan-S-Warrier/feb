@@ -23,6 +23,30 @@
     }
     .yes { background: #ff3366; color: white; }
     .no { background: #ccc; }
+
+    /* 🔽 NEW: Popup styles */
+    .popup {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .popup-box {
+      background: white;
+      padding: 22px;
+      border-radius: 14px;
+      width: 280px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .popup-box h3 {
+      margin-top: 0;
+    }
   </style>
 </head>
 <body>
@@ -42,9 +66,26 @@
     <button class="no" onclick="showWarning()">No 😤</button>
   </div>
 
+  <!-- 🔽 NEW: Custom popup -->
+  <div id="popup" class="popup">
+    <div class="popup-box">
+      <h3>Shravan says 💬</h3>
+      <p>
+        Please click Yes 😭❤️<br>
+        I can’t code beyond this!
+      </p>
+      <button onclick="closePopup()">Okay</button>
+    </div>
+  </div>
+
+  <!-- 🔽 UPDATED JS -->
   <script>
     function showWarning() {
-      alert("Please click Yes 😭❤️\nI can’t code beyond this!");
+      document.getElementById("popup").style.display = "flex";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
     }
   </script>
 
