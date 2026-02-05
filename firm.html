@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Firm Decision</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #fddb92, #d1fdff);
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    button {
+      padding: 12px 24px;
+      margin: 15px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+    }
+    .yes { background: #ff3366; color: white; }
+    .no { background: #ccc; }
+  </style>
+</head>
+<body>
+
+  <h2>
+    Hmm… I understand 🤍  
+    <br><br>
+    You are a firm lady, stern in your decisions.  
+    <br>
+    I like that 😌  
+    <br><br>
+    To make it easy, I won’t tell anyone.
+  </h2>
+
+  <div>
+    <button class="yes" onclick="location.href='yes.html'">Yes 💕</button>
+    <button class="no" onclick="showWarning()">No 😤</button>
+  </div>
+
+  <script>
+    function showWarning() {
+      alert("Please click Yes 😭❤️\nI can’t code beyond this!");
+    }
+  </script>
+
+</body>
+</html>
